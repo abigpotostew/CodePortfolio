@@ -20,32 +20,6 @@ function Util.DeepCopy(object)
     return _copy(object)
 end
 
--- Calculates the area of a convex polygon given by the array of coordinates coordArray. Must be counterclockwise.
-function Util.CalculatePolygonArea(coordArray)
-	local points = {}
-	for i = 0, (#coordArray - 1) / 2  do
-		table.insert(points, {x = coordArray[i*2 + 1], y = coordArray[i*2 + 2]})
-	end
-	table.insert(points, {x = points[1], y = points[2]})
-
-	local sum = 0
-	for i = 1, (#points) / 2 do
-		local p1 = points[i]
-		local p2 = points[i+1]
-		sum = sum + (p1.x * p2.y - p2.x * p1.y)
-	end
-
-	return sum
-end
-
-function Util.SumShapeAreas(shapes)
-	local area = 0
-	for i, shape in ipairs(shapes) do
-		area = area + Util.CalculatePolygonArea(shape)
-	end
-	return area
-end
-
 -- Merges two tables, with values from table2 taking precedence over values from table1
 function Util.MergeTables(table1, table2)
 	local newTable = {}
@@ -82,12 +56,6 @@ end
 
 function Util.RadToDeg(radians)
 	return radians*180.0/math.pi
-end
-
-function Util.RemoveAtEnd(event)
-	if event.phase =="end" then
-		timer.performWithDelay(1, function() event.target:removeSelf() end)
-	end
 end
 
 function Util.DeclareGlobal(name, value)
@@ -269,57 +237,6 @@ function Util.arrayNot(A,B)
         end
     end
     return notSet
-end
-
-
---------------------------------------------------------------
--- Color Utilities
---------------------------------------------------------------
-
---local Vector4 = require 'src.vector4'
-
---Estimates mixing 2 colors assuming they are in 0-255 range
--- From http://stackoverflow.com/a/8130763/595265
-function Util.mixColors(c1,c2)
-    --assert(Vector4:isVector4(c1), 
-    --       Vector4:isVector4(c2), "Util:mixColors(): requires 2 vec4")
-    local r1 = c1.x
-    local g1 = c1.y
-    local b1 = c1.z
-    local r2 = c2.x
-    local g2 = c2.y
-    local b2 = c2.z
-
-    local w1 = math.min(r1, math.min(g1, b1));
-    local w2 = math.min(r2, math.min(g2, b2));
-
-    -- remove white before mixing
-    r1 = r1-w1;
-    g1 = g1-w1;
-    b1 = b1-w1;
-    r2 = r2-w2;
-    g2 = g2-w2;
-    b2 = b2-w2;
-
-    local m1 = math.max(r1, math.max(g1, b1));
-    local m2 = math.max(r2, math.max(g2, b2));
-
-    local br = (m1+m2)/(2*255);
-
-    local r3 = (r1+r2)*br;
-    local g3 = (g1+g2)*br;
-    local b3 = (b1+b2)*br;
-
-    -- average whiteness and add into final color
-    local w3 = (w1+w2)/2;
-
-    r3 = r3 + w3;
-    g3 = g3 + w3;
-    b3 = b3 + w3;
-    
-    local alpha = (c1.w + c2.w)/2
-    
-    return r3,g3,b3,alpha
 end
 
     
