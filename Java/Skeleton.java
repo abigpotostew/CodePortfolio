@@ -4,27 +4,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.MathUtils;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.BodyDef;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.badlogic.gdx.physics.box2d.FixtureDef;
-import com.badlogic.gdx.physics.box2d.PolygonShape;
-import com.badlogic.gdx.physics.box2d.World;
-import com.blindtigergames.werescrewed.camera.Camera;
-import com.blindtigergames.werescrewed.checkpoints.CheckPoint;
-import com.blindtigergames.werescrewed.entity.animator.SimpleFrameAnimator;
-import com.blindtigergames.werescrewed.entity.animator.SimpleFrameAnimator.LoopBehavior;
-import com.blindtigergames.werescrewed.entity.hazard.Hazard;
-import com.blindtigergames.werescrewed.entity.particles.Steam;
-import com.blindtigergames.werescrewed.entity.platforms.Platform;
-import com.blindtigergames.werescrewed.entity.rope.Rope;
-import com.blindtigergames.werescrewed.entity.screws.Screw;
-import com.blindtigergames.werescrewed.entity.screws.StrippedScrew;
-import com.blindtigergames.werescrewed.eventTrigger.EventTrigger;
-import com.blindtigergames.werescrewed.graphics.SpriteBatch;
-import com.blindtigergames.werescrewed.joint.RevoluteJointBuilder;
+// [omitted]
 import com.blindtigergames.werescrewed.util.Util;
 
 /**

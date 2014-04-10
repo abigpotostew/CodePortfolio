@@ -2,11 +2,8 @@
 -- such that keys are type(number)
 
 local Heap = {}
-
 Heap.mt = {} --metatable
-
 Heap.prototype = {}
-
 Heap.mt.__index = Heap.prototype
 
 -- Utility Function
@@ -118,9 +115,7 @@ end
 ---------------------------------------------------
 -- Priority Queue methods
 ---------------------------------------------------
---
 -- Max priority queue methods
---
 function Heap.prototype.maximum(self,i)
 	if self.isMax ~= true then
 		--no maximum garanteed when using a min priority queue
@@ -255,9 +250,7 @@ function Heap.prototype.find(self,kOrV,obj)
 	return nil, nil
 end
 
----------------------------------------------------
 -- Debug Utility methods
----------------------------------------------------
 function Heap.prototype.print(self,m)
 	local out = (m and (m..': ') or '') .. ('['..(self[1].k or '')..', '.. (self[1].v or '') ..']')
 	for i = 2, self.heapsize do

@@ -1,16 +1,7 @@
 package com.blindtigergames.werescrewed.entity.builders;
 
 import com.badlogic.gdx.graphics.Texture;
-import com.badlogic.gdx.math.Rectangle;
-import com.badlogic.gdx.math.Vector2;
-import com.badlogic.gdx.physics.box2d.BodyDef.BodyType;
-import com.badlogic.gdx.physics.box2d.World;
-import com.badlogic.gdx.utils.Array;
-import com.blindtigergames.werescrewed.WereScrewedGame;
-import com.blindtigergames.werescrewed.entity.PolySprite;
-import com.blindtigergames.werescrewed.entity.RootSkeleton;
-import com.blindtigergames.werescrewed.entity.Skeleton;
-import com.blindtigergames.werescrewed.entity.action.FadeSkeletonAction;
+// [omitted]
 import com.blindtigergames.werescrewed.eventTrigger.EventTrigger;
 
 public class SkeletonBuilder extends GenericEntityBuilder< SkeletonBuilder > {

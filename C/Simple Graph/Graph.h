@@ -46,13 +46,5 @@ void BFS( GraphRef G, int s );
 void printGraph( FILE* out, GraphRef G );
 void printGraphInfo( GraphRef G );
 
-
-
-
-
-
-
-
-
-
 #endif
+
